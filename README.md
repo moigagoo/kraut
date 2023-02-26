@@ -17,10 +17,7 @@ const routes = {
 . "/users/{userId}/": user.render
 }
 
-let router = initRouter(routes)
-
-
-setRenderer(router)
+setRenderer(render(routes))
 ```
 
 ```
@@ -32,5 +29,4 @@ import kraut/context
 proc render*(context: Context): VNode =
 . buildHtml(tdiv):
 .   h1: text "User id" & context.params["userId"]
-
 ```
