@@ -62,7 +62,7 @@ proc match(hashPart, pattern: kstring, context: var Context): bool =
     if patternComponent.isPlaceholder:
       context.urlParams[placeholderName(patternComponent)] = hashPartComponent
 
-proc routeRenderer*(routes: seq[Route]): proc (routerData: RouterData): VNode =
+proc routeRenderer*(routes: openArray[Route]): proc (routerData: RouterData): VNode =
   ## Generate a dispatcher proc that calls a renderer proc based for the given hash part according to the ``routes`` table.
 
   var context = newContext()
