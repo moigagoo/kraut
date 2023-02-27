@@ -1,4 +1,4 @@
-import karax/[karax, kbase, ]
+import karax/karax
 
 import kraut
 
@@ -6,9 +6,9 @@ import pages/[index, users, user]
 
 
 const routes = {
-  kstring("/"): index.render,
-  kstring("/users/"): users.render,
-  kstring("/users/{userId}"): user.render
+  "/": index.render,
+  "/users/": users.render,
+  "/users/{userId}/": user.render
 }
 
 
