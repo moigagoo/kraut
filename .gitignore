@@ -17,3 +17,5 @@ outputGotten.txt
 tests/megatest.nim
 tests/megatest
 
+tests/tutils
+
