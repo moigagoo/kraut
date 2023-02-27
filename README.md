@@ -13,7 +13,7 @@ $ nimble install kraut
 
 Add it to your .nimble file:
 
-```
+```nim
 require "kraut >= 1.0.0"
 ```
 
@@ -32,7 +32,9 @@ First, define your routes as an array or sequence of pattern-renderer pairs.
 
 Nim offers nice syntax to define Kraut routes:
 
-```
+```nim
+# app.nim
+
 const routes = {
   "/": index.render,
   "/users/": users.render,
@@ -44,7 +46,7 @@ In this example, `"/users/{userId}"` is a pattern and `user.render` us a rendere
 
 Next, define your renderers:
 
-```
+```nim
 # user.nim
 
 proc render*(context: Context): VNode =
@@ -54,13 +56,17 @@ proc render*(context: Context): VNode =
 
 Finally, generate the route renderer proc. It's a proc that accepts a single `RouterData` argument and returns a `VNode`. It can be passed directly to Karax's `setRenderer` proc or used inside another proc:
 
-```
+```nim
+# app.nim
+
 setRenderer(routerRenderer(routes))
 ```
 
 or
 
-```
+```nim
+# app.nim
+
 let renderer = routerRenderer(routes)
 
 proc render(routerData: RouterData): VNode = 
