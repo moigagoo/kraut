@@ -44,6 +44,15 @@ const routes = {
 
 In this example, `"/users/{userId}"` is a pattern and `user.render` us a renderer.
 
+You can split your routes into groups for maintainability and even store the groups in different modules:
+
+```nim
+const
+  indexRoute = @{"/": index.render}
+  userRoutes = @{"/users/": users.render, "/users/{userId}/": user.render}
+  routes = indexRoute & userRoutes
+```
+
 Next, define your renderers:
 
 ```nim
@@ -83,7 +92,7 @@ See the complete example in the `demo` folder.
 
 # Why you should use Kraut
 
-1. Route definition is dead simple and can be stored in a separate module.
+1. Route definition is dead simple. You can split your definitions and can store them in a separate modules.
 2. Renderer proc doesn't have to be anything special, it's just a regular proc you would use in Karax without Kraut, sans the `Context` argument.
 3. Kraut is efficient. Now heavy regexes or hash maps, just iteration and string comparison that stops with the first match.
 

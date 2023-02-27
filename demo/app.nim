@@ -5,11 +5,10 @@ import kraut
 import pages/[index, users, user]
 
 
-const routes = {
-  "/": index.render,
-  "/users/": users.render,
-  "/users/{userId}/": user.render
-}
+const
+  indexRoute = @{"/": index.render}
+  userRoutes = @{"/users/": users.render, "/users/{userId}/": user.render}
+  routes = indexRoute & userRoutes
 
 let renderer = routeRenderer(routes)
 

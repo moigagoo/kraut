@@ -5,6 +5,7 @@
 
 *.exe
 *.html
+*.js
 *.idx
 htmldocs
 docs
