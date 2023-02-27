@@ -30,6 +30,6 @@ import kraut/context
 
 proc render*(context: Context): VNode =
   buildHtml(tdiv):
-    h1: text "User id" & context.params["userId"]
+    text "User id: " & context.urlParams["userId"]
 ```
 
