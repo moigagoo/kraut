@@ -83,7 +83,7 @@ See the complete example in the `demo` folder.
 
 # Why you should use Kraut
 
-1. Route definition is dead simple.
+1. Route definition is dead simple and can be stored in a separate module.
 2. Renderer proc doesn't have to be anything special, it's just a regular proc you would use in Karax without Kraut, sans the `Context` argument.
 3. Kraut is efficient. Now heavy regexes or hash maps, just iteration and string comparison that stops with the first match.
 
