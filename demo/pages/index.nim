@@ -5,5 +5,8 @@ import kraut/context
 
 proc render*(context: Context): VNode =
   buildHtml(tdiv):
-    text "This is index"
+    p:
+      text "This is index"
+    ul:
+      li: a(href = "#/users/"): text "Users"
 
