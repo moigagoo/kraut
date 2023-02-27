@@ -1,6 +1,6 @@
 import karax/[karaxdsl, vdom]
 
-import kraut/types
+import kraut/context
 
 
 proc render*(context: Context): VNode =
