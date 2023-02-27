@@ -57,6 +57,7 @@ Next, define your renderers:
 
 ```nim
 # user.nim
+import kraut/context
 
 proc render*(context: Context): VNode =
   buildHtml(tdiv):
@@ -67,14 +68,7 @@ Finally, generate the route renderer proc. It's a proc that accepts a single `Ro
 
 ```nim
 # app.nim
-
-setRenderer(routerRenderer(routes))
-```
-
-or
-
-```nim
-# app.nim
+import kraut
 
 let renderer = routerRenderer(routes)
 
