@@ -38,6 +38,8 @@ proc match(hashPart: kstring, pattern: string, context: var Context): bool =
 proc routeRenderer*(routes: openArray[Route]): proc (routerData: RouterData): VNode =
   ## Generate a dispatcher proc that calls a renderer proc based for the given hash part according to the ``routes`` table.
 
+  let routes = @routes
+
   var context = newContext()
 
   result = proc (routerData: RouterData): VNode =
