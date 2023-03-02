@@ -73,7 +73,7 @@ import kraut
 let renderer = routerRenderer(routes)
 
 proc render(routerData: RouterData): VNode = 
-  buildHtmil(tdiv):
+  buildHtml(tdiv):
     h1: text "Header"
 
     renderer(routerData)
@@ -88,5 +88,5 @@ See the complete example in the `demo` folder.
 
 1. Route definition is dead simple. You can split your definitions and can store them in a separate modules.
 2. Renderer proc doesn't have to be anything special, it's just a regular proc you would use in Karax without Kraut, sans the `Context` argument.
-3. Kraut is efficient. Now heavy regexes or hash maps, just iteration and string comparison that stops with the first match.
+3. Kraut is efficient. No heavy regexes or hash maps, just iteration and string comparison that stops with the first match.
 
