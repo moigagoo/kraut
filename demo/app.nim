@@ -2,15 +2,12 @@ import karax/[karax, karaxdsl, vdom]
 
 import kraut
 
-import pages/[notfound, index, users, user]
+import pages/notfound
+import routes
 
 
-const
-  indexRoute = @{"/": index.render}
-  userRoutes = @{"/users/": users.render, "/users/{userId}/": user.render}
-  routes = indexRoute & userRoutes
 
-let renderer = routeRenderer(routes, defaultRenderer = notfound.render)
+let renderer = routeRenderer(routes.routes, defaultRenderer = notfound.render)
 
 
 proc render(routerData: RouterData): VNode =
@@ -22,5 +19,5 @@ proc render(routerData: RouterData): VNode =
 
 setRenderer(render)
 # or just setRenderer(renderer)
-# or even setRenderer(routeRenderer(routes))
+# or even setRenderer(routeRenderer(outes))
 
