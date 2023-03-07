@@ -35,17 +35,23 @@ proc match(hashPart: kstring, pattern: string, context: var Context): bool =
     if patternComponent.isPlaceholder:
       context.urlParams[placeholderName(patternComponent)] = hashPartComponent
 
-proc routeRenderer*(routes: openArray[Route]): proc (routerData: RouterData): VNode =
+proc routeRenderer*(routes: openArray[Route], defaultRenderer: Renderer = nil): proc (routerData: RouterData): VNode =
   ## Generate a dispatcher proc that calls a renderer proc based for the given hash part according to the ``routes`` table.
+
+  let routes = @routes
 
   var context = newContext()
 
   result = proc (routerData: RouterData): VNode =
     ## Try to match the current hash part against available patterns and call the matching renderer.
 
+    var renderer = defaultRenderer
+
+    for route in routes:
+      if routerData.hashPart.match(route.pattern, context):
+        renderer = route.renderer
+        break
+
     buildHtml(tdiv):
-      for (pattern, renderer) in routes:
-        if routerData.hashPart.match(pattern, context):
-          renderer(context)
-          break
+      renderer(context)
 

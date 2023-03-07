@@ -1,10 +1,10 @@
-# Kraut Demo App
+# Kraut demo app
 
 Build the app:
 
-1. `nimble install -y karax`
-2. `karun app.nim`
-
+```
+$ karun app.nim
+```
 
 Run the app:
 
