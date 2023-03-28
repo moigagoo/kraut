@@ -2,7 +2,7 @@
 
 **Kraut** is a router for [Karax](https://github.com/karaxnim/karax) frontend framework.
 
-Kraut is best served with [Sauer](https://github.com/moigagoo/kraut) 👨‍🍳
+Kraut is best served with [Sauer](https://github.com/moigagoo/sauer) 👨‍🍳
 
 ## Installation
 
