@@ -29,7 +29,7 @@ First, define your routes as an array or sequence of pattern-renderer pairs.
 
 **Renderer** is proc that takes a single argument of type `Context` and returns a `VNode`.
 
-**Context** is an object that holds the URL params extracted from the hash part in its `urlParams` field.
+**Context** is an object that holds the URL params extracted from the hash part in its `urlParams` field and the query params in `qryParams`.
 
 Nim offers nice syntax to define Kraut routes:
 
