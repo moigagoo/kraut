@@ -35,7 +35,7 @@ proc match(hashPart: kstring, pattern: string, context: var Context): bool =
     if patternComponent.isPlaceholder:
       context.urlParams[placeholderName(patternComponent)] = hashPartComponent
 
-  context.qryParams = ($hashPart).qryParams()
+  context.qryParams = ($hashPart).qryParams
 
 proc routeRenderer*(routes: openArray[Route], defaultRenderer: Renderer = nil): proc (routerData: RouterData): VNode =
   ## Generate a dispatcher proc that calls a renderer proc based for the given hash part according to the ``routes`` table.
