@@ -8,7 +8,7 @@
 -   [d]—docs improvement
 
 
-## 1.0.2 (WIP)
+## 1.0.2 (April 16, 2023)
 
 -   [+] Extract query params from URL and store in `qryParams` attribute of `Context` instance (see [#2](https://github.com/moigagoo/kraut/issues/2)).
 
