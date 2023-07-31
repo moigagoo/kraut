@@ -8,6 +8,11 @@
 -   [d]—docs improvement
 
 
+## 1.0.3 (July 31, 2023)
+
+-   [r] Lower the required Nim version.
+
+
 ## 1.0.2 (April 16, 2023)
 
 -   [+] Extract query params from URL and store in `qryParams` attribute of `Context` instance (see [#2](https://github.com/moigagoo/kraut/issues/2)).
