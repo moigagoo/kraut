@@ -1,4 +1,4 @@
-import std/[strutils, tables]
+import std/[strutils, uri, tables]
 
 
 proc pathComponents*(path: string): seq[string] =
@@ -12,21 +12,12 @@ proc pathComponents*(path: string): seq[string] =
 
   cleanPath.split('/')
 
-proc qryParams*(path: string): TableRef[string, string] =
+proc qryParams*(qryString: string): TableRef[string, string] =
   ## Extract key-value pairs from the query part of a path.
 
   result = newTable[string, string]()
 
-  if len(path.split('?')) < 2:
-    return result
-
-  let qry = path.split('?')[1]
-
-  for component in qry.split('&'):
-    let
-      key = component.split('=')[0]
-      val = component.split('=')[1]
-
+  for key, val in decodeQuery(qryString):
     result[key] = val
 
 proc isPlaceholder*(component: string): bool =
