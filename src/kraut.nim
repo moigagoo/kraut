@@ -35,8 +35,6 @@ proc match(hashPart: kstring, pattern: string, context: var Context): bool =
     if patternComponent.isPlaceholder:
       context.urlParams[placeholderName(patternComponent)] = hashPartComponent
 
-  context.qryParams = ($hashPart).qryParams
-
 proc routeRenderer*(routes: openArray[Route], defaultRenderer: Renderer = nil): proc (routerData: RouterData): VNode =
   ## Generate a dispatcher proc that calls a renderer proc based for the given hash part according to the ``routes`` table.
 
@@ -51,7 +49,9 @@ proc routeRenderer*(routes: openArray[Route], defaultRenderer: Renderer = nil): 
 
     for route in routes:
       if routerData.hashPart.match(route.pattern, context):
+        context.qryParams = ($routerData.queryString).qryParams
         renderer = route.renderer
+
         break
 
     buildHtml(tdiv):
