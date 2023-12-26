@@ -8,6 +8,12 @@
 -   [d]—docs improvement
 
 
+## 1.1.0 (December 26, 2023)
+
+-   [!] Require Karax 1.3.3.
+-   [f] Fix query param parsing.
+
+
 ## 1.0.3 (July 31, 2023)
 
 -   [r] Lower the required Nim version.
