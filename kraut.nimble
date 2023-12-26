@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.0.3"
+version       = "1.1.0"
 author        = "Constantine Molchanov"
 description   = "Router for Karax frontend framework."
 license       = "MIT"
