@@ -8,6 +8,12 @@
 -   [d]—docs improvement
 
 
+# 1.1.1 (July 11, 2024)
+
+-   [f] Fix query param parsing for '/' routes.
+
+
+
 ## 1.1.0 (December 26, 2023)
 
 -   [!] Require Karax 1.3.3.
