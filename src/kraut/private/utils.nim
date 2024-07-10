@@ -17,7 +17,11 @@ proc qryParams*(qryString: string): TableRef[string, string] =
 
   result = newTable[string, string]()
 
-  for key, val in decodeQuery(qryString):
+  var cleanQryString = qryString
+
+  if cleanQryString.startsWith('?'): cleanQryString.removePrefix('?')
+
+  for key, val in decodeQuery(cleanQryString):
     result[key] = val
 
 proc isPlaceholder*(component: string): bool =
