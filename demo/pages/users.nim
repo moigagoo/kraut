@@ -1,7 +1,7 @@
 import std/strformat
 import karax/[karaxdsl, kbase, vdom]
 
-import kraut/context
+import kraut
 
 
 proc render*(context: Context): VNode =

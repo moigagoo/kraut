@@ -58,7 +58,7 @@ Next, define your renderers:
 
 ```nim
 # user.nim
-import kraut/context
+import kraut
 
 proc render*(context: Context): VNode =
   buildHtml(tdiv):

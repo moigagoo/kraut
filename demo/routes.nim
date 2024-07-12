@@ -1,4 +1,4 @@
-import kraut/sugar
+import kraut
 
 
 routes:
