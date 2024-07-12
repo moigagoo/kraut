@@ -8,6 +8,11 @@
 -   [d]—docs improvement
 
 
+# 1.2.1 (July 12, 2024)
+
+-   [!][r] Refactor submodules. Now, only `kraut` needs to be imported everywhere you need Kraut functionality.
+
+
 # 1.1.1 (July 11, 2024)
 
 -   [f] Fix query param parsing for '/' routes.
