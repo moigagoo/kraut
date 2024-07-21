@@ -8,6 +8,11 @@
 -   [d]—docs improvement
 
 
+# 1.2.2 (July 21, 2024)
+
+-   [f] Fix bug with `urlParams` being `nil` during route matching. Switched from `TableRef` to `Table`.
+
+
 # 1.2.1 (July 12, 2024)
 
 -   [!][r] Refactor submodules. Now, only `kraut` needs to be imported everywhere you need Kraut functionality.

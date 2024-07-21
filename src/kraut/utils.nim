@@ -12,10 +12,10 @@ proc pathComponents*(path: string): seq[string] =
 
   cleanPath.split('/')
 
-proc qryParams*(qryString: string): TableRef[string, string] =
+proc qryParams*(qryString: string): Table[string, string] =
   ## Extract key-value pairs from the query part of a path.
 
-  result = newTable[string, string]()
+  result = initTable[string, string]()
 
   var cleanQryString = qryString
 
